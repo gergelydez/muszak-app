@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>M&#369;szakApp</title>
+<title>MűszakApp</title>
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png">
 <link rel="icon" type="image/png" href="icon-512.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="M&#369;szakApp">
+<meta name="apple-mobile-web-app-title" content="MűszakApp">
 <meta name="theme-color" content="#0B0D12">
 <style>
 :root{--day:#F5A623;--night:#7B8CFF;--free:#2DCB8A;--sub:#FF5E5E;--subd:#FF9A3C;--hol:#E040FB;--bg:#0B0D12;--bg2:#13161F;--bg3:#1A1E2C;--bord:rgba(255,255,255,.08);--text:#F0F1F5;--muted:#5C6270;}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;user-select:none;}
 html,body{height:100%;}
-body{overflow:hidden;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,'Segoe UI',sans-serif;display:flex;flex-direction:column;}
+body{overflow:hidden;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,sans-serif;display:flex;flex-direction:column;}
 .clockbar{flex:0 0 auto;background:#0D1019;border-bottom:1px solid var(--bord);padding:8px 14px;display:flex;align-items:center;gap:8px;}
 .clock-time{font-size:26px;font-weight:800;color:#fff;min-width:105px;letter-spacing:-1px;font-variant-numeric:tabular-nums;}
 .shift-now{display:flex;align-items:center;gap:7px;background:var(--bg2);border:1px solid var(--bord);border-radius:11px;padding:6px 10px;flex:1;min-width:0;}
@@ -45,7 +45,7 @@ header{flex:0 0 auto;background:rgba(11,13,18,.98);border-bottom:1px solid var(-
 .sumrow{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:9px;}
 .sc{background:var(--bg2);border:1px solid var(--bord);border-radius:11px;padding:9px;}
 .sc-v{font-size:20px;font-weight:800;}
-.sc-l{font-size:9px;color:var(--muted);margin-top:2px;font-weight:600;letter-spacing:.3px;}
+.sc-l{font-size:9px;color:var(--muted);margin-top:2px;font-weight:600;}
 .wlbls{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:3px;}
 .wl{text-align:center;font-size:9px;font-weight:700;color:var(--muted);padding:2px 0;}
 .wl:nth-child(6),.wl:nth-child(7){color:rgba(255,94,94,.75);}
@@ -140,7 +140,7 @@ header{flex:0 0 auto;background:rgba(11,13,18,.98);border-bottom:1px solid var(-
 <div class="clockbar">
   <div class="clock-time" id="clockTime">--:--:--</div>
   <div class="shift-now">
-    <div class="shift-now-ico" id="shiftIco">&#x23F3;</div>
+    <div class="shift-now-ico" id="shiftIco">⏳</div>
     <div>
       <div class="shift-now-type" id="shiftType">...</div>
       <div class="shift-now-sub" id="shiftSub"></div>
@@ -150,18 +150,18 @@ header{flex:0 0 auto;background:rgba(11,13,18,.98);border-bottom:1px solid var(-
 </div>
 
 <header>
-  <div class="logo">&#x23F1; M&#369;szakApp</div>
+  <div class="logo">⏱ MűszakApp</div>
   <div class="mrow">
-    <button class="marr" onclick="shiftMonth(-1)">&#8249;</button>
+    <button class="marr" onclick="shiftMonth(-1)">‹</button>
     <div class="mscroll" id="mscroll"></div>
-    <button class="marr" onclick="shiftMonth(1)">&#8250;</button>
+    <button class="marr" onclick="shiftMonth(1)">›</button>
   </div>
   <div class="legend">
     <div class="leg"><div class="ldot" style="background:var(--day)"></div>NAPPAL</div>
-    <div class="leg"><div class="ldot" style="background:var(--night)"></div>&#201;JSZAKA</div>
+    <div class="leg"><div class="ldot" style="background:var(--night)"></div>ÉJSZAKA</div>
     <div class="leg"><div class="ldot" style="background:var(--free)"></div>SZABAD</div>
     <div class="leg"><div class="ldot" style="background:var(--sub)"></div>HELYETTES.</div>
-    <div class="leg"><div class="ldot" style="background:var(--hol)"></div>&#220;NNEP</div>
+    <div class="leg"><div class="ldot" style="background:var(--hol)"></div>ÜNNEP</div>
   </div>
 </header>
 
@@ -175,19 +175,19 @@ header{flex:0 0 auto;background:rgba(11,13,18,.98);border-bottom:1px solid var(-
     <div class="mdate" id="mDate"></div>
     <div class="mcurr" id="mCurr"></div>
     <div class="tgrid">
-      <button class="tbtn day" data-t="day">&#x2600;&#xFE0F; Nappalos</button>
-      <button class="tbtn night" data-t="night">&#x1F319; &#201;jszak&#225;s</button>
-      <button class="tbtn free" data-t="free">&#x2728; Szabad</button>
-      <button class="tbtn sub" data-t="sub">&#x1F504; Helyet. &#201;jjel</button>
-      <button class="tbtn sub-day" data-t="sub-day">&#x1F504; Helyet. Nappal</button>
+      <button class="tbtn day" data-t="day">☀️ Nappalos</button>
+      <button class="tbtn night" data-t="night">🌙 Éjszakás</button>
+      <button class="tbtn free" data-t="free">✨ Szabad</button>
+      <button class="tbtn sub" data-t="sub">🔄 Helyet. Éjjel</button>
+      <button class="tbtn sub-day" data-t="sub-day">🔄 Helyet. Nappal</button>
     </div>
-    <div class="mlbl">MEGJEGYZ&#201;S / KOLL&#201;GA NEVE</div>
+    <div class="mlbl">MEGJEGYZÉS / KOLLÉGA NEVE</div>
     <textarea class="minput" id="mNote" rows="3" placeholder="Pl.: Attila helyett, 18:00-06:00..."></textarea>
     <div class="macts">
-      <button class="msave" onclick="saveModal()">&#x1F4BE; Ment&#233;s</button>
-      <button class="mdel" onclick="delModal()">&#x1F5D1;</button>
+      <button class="msave" onclick="saveModal()">💾 Mentés</button>
+      <button class="mdel" onclick="delModal()">🗑</button>
     </div>
-    <button class="mclose" onclick="closeModal()">M&#233;gse</button>
+    <button class="mclose" onclick="closeModal()">Mégse</button>
   </div>
 </div>
 
@@ -195,28 +195,28 @@ header{flex:0 0 auto;background:rgba(11,13,18,.98);border-bottom:1px solid var(-
 
 <script>
 
-const MNAMES=['Janu\u00E1r','Febru\u00E1r','M\u00E1rcius','\u00C1prilis','M\u00E1jus','J\u00FAnius','J\u00FAlius','Augusztus','Szeptember','Okt\u00F3ber','November','December'];
-const MSHORT=['jan','feb','m\u00E1r','\u00E1pr','m\u00E1j','j\u00FAn','j\u00FAl','aug','szep','okt','nov','dec'];
-const DFULL=['Vas\u00E1rnap','H\u00E9tf\u0151','Kedd','Szerda','Cs\u00FCt\u00F6rt\u00F6k','P\u00E9ntek','Szombat'];
+const MNAMES=['Január','Február','Március','Április','Május','Június','Július','Augusztus','Szeptember','Október','November','December'];
+const MSHORT=['jan','feb','már','ápr','máj','jún','júl','aug','szep','okt','nov','dec'];
+const DFULL=['Vasárnap','Hétfő','Kedd','Szerda','Csütörtök','Péntek','Szombat'];
 const DSHORT=['V','H','K','Sze','Cs','P','Szo'];
-const NAPOK=['vas\u00E1rnap','h\u00E9tf\u0151','kedd','szerda','cs\u00FCt\u00F6rt\u00F6k','p\u00E9ntek','szombat'];
-const ICONS={day:'\u2600\uFE0F',night:'\u1F319',free:'\u2728',sub:'\u1F504','sub-day':'\u1F504'};
-const LABELS={day:'NAP',night:'\u00C9JJ',free:'SZB',sub:'H.\u00C9','sub-day':'H.N'};
-const DESCS={day:'Nappalos m\u0171szak 06:00\u201318:00',night:'\u00C9jszak\u00E1s m\u0171szak 18:00\u201306:00',free:'Szabad nap',sub:'Helyettes\u00EDt\u00E9s \u2013 \u00E9jszaka','sub-day':'Helyettes\u00EDt\u00E9s \u2013 nappal'};
+const NAPOK=['vasárnap','hétfő','kedd','szerda','csütörtök','péntek','szombat'];
+const ICONS={day:'☀️',night:'🌙',free:'✨',sub:'🔄','sub-day':'🔄'};
+const LABELS={day:'NAP',night:'ÉJJ',free:'SZB',sub:'H.É','sub-day':'H.N'};
+const DESCS={day:'Nappalos 06:00–18:00',night:'Éjszakás 18:00–06:00',free:'Szabad nap',sub:'Helyet. éjszaka','sub-day':'Helyet. nappal'};
 
 const HOLIDAYS={
-  "2026-01-01":"\u00DAj\u00E9v","2026-03-15":"Nemzeti \u00FCnnep",
-  "2026-04-03":"Nagyp\u00E9ntek","2026-04-05":"H\u00FAsv\u00E9t vas\u00E1rnap","2026-04-06":"H\u00FAsv\u00E9t h\u00E9tf\u0151",
-  "2026-05-01":"A munka \u00FCnnepe",
-  "2026-05-23":"P\u00FCnk\u00F6sd szombat","2026-05-24":"P\u00FCnk\u00F6sd vas\u00E1rnap","2026-05-25":"P\u00FCnk\u00F6sd h\u00E9tf\u0151",
-  "2026-08-20":"\u00C1llamalap\u00EDt\u00E1s \u00FCnnepe","2026-10-23":"Nemzeti \u00FCnnep","2026-11-01":"Mindenszentek",
-  "2026-12-24":"Szenteste","2026-12-25":"Kar\u00E1csony 1.","2026-12-26":"Kar\u00E1csony 2.",
-  "2027-01-01":"\u00DAj\u00E9v","2027-03-15":"Nemzeti \u00FCnnep",
-  "2027-03-26":"Nagyp\u00E9ntek","2027-03-28":"H\u00FAsv\u00E9t vas\u00E1rnap","2027-03-29":"H\u00FAsv\u00E9t h\u00E9tf\u0151",
-  "2027-05-01":"A munka \u00FCnnepe",
-  "2027-05-15":"P\u00FCnk\u00F6sd szombat","2027-05-16":"P\u00FCnk\u00F6sd vas\u00E1rnap","2027-05-17":"P\u00FCnk\u00F6sd h\u00E9tf\u0151",
-  "2027-08-20":"\u00C1llamalap\u00EDt\u00E1s \u00FCnnepe","2027-10-23":"Nemzeti \u00FCnnep","2027-11-01":"Mindenszentek",
-  "2027-12-24":"Szenteste","2027-12-25":"Kar\u00E1csony 1.","2027-12-26":"Kar\u00E1csony 2."
+  "2026-01-01":"Újév","2026-03-15":"Nemzeti ünnep",
+  "2026-04-03":"Nagypéntek","2026-04-05":"Húsvét vasárnap","2026-04-06":"Húsvét hétfő",
+  "2026-05-01":"Munka ünnepe",
+  "2026-05-23":"Pünkösd szombat","2026-05-24":"Pünkösd vasárnap","2026-05-25":"Pünkösd hétfő",
+  "2026-08-20":"Államalapítás","2026-10-23":"Nemzeti ünnep","2026-11-01":"Mindenszentek",
+  "2026-12-24":"Szenteste","2026-12-25":"Karácsony 1.","2026-12-26":"Karácsony 2.",
+  "2027-01-01":"Újév","2027-03-15":"Nemzeti ünnep",
+  "2027-03-26":"Nagypéntek","2027-03-28":"Húsvét vasárnap","2027-03-29":"Húsvét hétfő",
+  "2027-05-01":"Munka ünnepe",
+  "2027-05-15":"Pünkösd szombat","2027-05-16":"Pünkösd vasárnap","2027-05-17":"Pünkösd hétfő",
+  "2027-08-20":"Államalapítás","2027-10-23":"Nemzeti ünnep","2027-11-01":"Mindenszentek",
+  "2027-12-24":"Szenteste","2027-12-25":"Karácsony 1.","2027-12-26":"Karácsony 2."
 };
 
 function updateClock(){
@@ -227,9 +227,9 @@ function updateClock(){
   document.getElementById('clockTime').textContent=h+':'+m+':'+s;
   document.getElementById('clockDate').textContent=now.getFullYear()+'. '+MSHORT[now.getMonth()]+'. '+now.getDate()+'. '+NAPOK[now.getDay()];
   var shift=getShift(now);
-  var snames={day:'Nappalos m\u0171szak',night:'jszaks m\u0171szak',free:'Szabad nap',sub:'Helyettes\u00EDt\u00E9s \u00E9jjel','sub-day':'Helyettes\u00EDt\u00E9s nappal'};
-  var stimes={day:'06:00 \u2013 18:00',night:'18:00 \u2013 06:00',free:'pih\u0435\u043D\u0151nap',sub:'\u00E9jszak\u00E1s','sub-day':'nappalos'};
-  document.getElementById('shiftIco').textContent=ICONS[shift.type]||'\u23F3';
+  var snames={day:'Nappalos műszak',night:'Éjszakás műszak',free:'Szabad nap',sub:'Helyettesítés éjjel','sub-day':'Helyettesítés nappal'};
+  var stimes={day:'06:00–18:00',night:'18:00–06:00',free:'pihenőnap',sub:'éjszakás','sub-day':'nappalos'};
+  document.getElementById('shiftIco').textContent=ICONS[shift.type]||'⏳';
   document.getElementById('shiftType').textContent=snames[shift.type]||shift.type;
   document.getElementById('shiftSub').textContent=shift.note||(stimes[shift.type]||'');
 }
@@ -284,9 +284,9 @@ function pageHTML(y,m){
   }
   var h='<div class="mtitle">'+MNAMES[m]+' <small>'+y+'</small></div>';
   h+='<div class="sumrow">';
-  h+='<div class="sc"><div class="sc-v" style="color:var(--day)">'+dayCnt+'</div><div class="sc-l">NAP</div></div>';
-  h+='<div class="sc"><div class="sc-v" style="color:var(--night)">'+nightCnt+'</div><div class="sc-l">EJSZAKA</div></div>';
-  h+='<div class="sc"><div class="sc-v" style="color:var(--day)">'+hrs+'h</div><div class="sc-l">OSSZ ORA</div></div>';
+  h+='<div class="sc"><div class="sc-v" style="color:var(--day)">'+dayCnt+'</div><div class="sc-l">☀️ NAP</div></div>';
+  h+='<div class="sc"><div class="sc-v" style="color:var(--night)">'+nightCnt+'</div><div class="sc-l">🌙 ÉJSZAKA</div></div>';
+  h+='<div class="sc"><div class="sc-v" style="color:var(--day)">'+hrs+'h</div><div class="sc-l">⏱ ÓRA</div></div>';
   h+='</div>';
   h+='<div class="wlbls"><div class="wl">H</div><div class="wl">K</div><div class="wl">Sze</div><div class="wl">Cs</div><div class="wl">P</div><div class="wl">Szo</div><div class="wl">V</div></div>';
   h+='<div class="calgrid">';
@@ -313,28 +313,28 @@ function pageHTML(y,m){
   var nextMonth=new Date(now.getFullYear(),now.getMonth()+1,1);
   var nextInRange=(new Date(y,m,1).getTime()===nextMonth.getTime());
   if(todayInRange||nextInRange){
-    h+='<div class="sechdr">KOZELGO MUSZAKOK</div>';
+    h+='<div class="sechdr">🗓️ Közelgő műszakok</div>';
     for(var i=0;i<10;i++){
       var dt=new Date(now.getFullYear(),now.getMonth(),now.getDate()+i);
       var s=getShift(dt);var holN=HOLIDAYS[dk(dt)]||'';var isToday=(i===0);
       h+='<div class="ucard'+(isToday?' today-card':'')+'" onclick="openModal(''+dk(dt)+'')">';
       h+='<div class="ucard-ico '+s.type+'">'+ICONS[s.type]+'</div>';
       h+='<div class="ucard-body">';
-      h+='<div class="ucard-date">'+(isToday?'MA: ':'')+DFULL[dt.getDay()]+', '+(dt.getMonth()+1)+'. '+dt.getDate()+'.</div>';
-      if(holN) h+='<div class="ucard-hol">'+holN+'</div>';
+      h+='<div class="ucard-date">'+(isToday?'🟢 MA: ':'')+DFULL[dt.getDay()]+', '+(dt.getMonth()+1)+'. '+dt.getDate()+'.</div>';
+      if(holN) h+='<div class="ucard-hol">🎉 '+holN+'</div>';
       h+='<div class="ucard-desc">'+(s.note||DESCS[s.type])+'</div>';
       h+='</div>';
       h+='<div class="ubadge '+s.type+'">'+LABELS[s.type]+'</div>';
       h+='</div>';
     }
   }
-  h+='<div class="sechdr">MEGOSZT\u00C1S</div>';
+  h+='<div class="sechdr">📤 Megosztás</div>';
   h+='<div class="share-box">';
-  h+='<div style="font-size:11px;color:var(--muted)">K\u00FCldd el a p\u00E1rodnak vagy koll\u00E9g\u00E1dnak</div>';
+  h+='<div style="font-size:11px;color:var(--muted)">Küldd el a párodnak vagy kollégádnak</div>';
   h+='<div class="share-row">';
-  h+='<button class="sbtn copy" onclick="doCopy('+y+','+m+')">M\u00E1sol\u00E1s</button>';
-  h+='<button class="sbtn wa" onclick="doWA('+y+','+m+')">WhatsApp</button>';
-  h+='<button class="sbtn mail" onclick="doMail('+y+','+m+')">Email</button>';
+  h+='<button class="sbtn copy" onclick="doCopy('+y+','+m+')">📋 Másolás</button>';
+  h+='<button class="sbtn wa" onclick="doWA('+y+','+m+')">💬 WhatsApp</button>';
+  h+='<button class="sbtn mail" onclick="doMail('+y+','+m+')">📧 Email</button>';
   h+='</div></div>';
   return h;
 }
@@ -403,7 +403,7 @@ function openModal(key){
   var dt=new Date(y,m-1,d);var s=getShift(dt);selType=s.type;
   var holN=HOLIDAYS[key]||'';
   document.getElementById('mDate').textContent=DFULL[dt.getDay()]+', '+y+'. '+MSHORT[m-1]+'. '+d+'.';
-  document.getElementById('mCurr').textContent=(holN?holN+' - ':'')+DESCS[s.type];
+  document.getElementById('mCurr').textContent=(holN?'🎉 '+holN+' – ':'')+DESCS[s.type];
   document.getElementById('mNote').value=s.note||'';
   var tbs=document.querySelectorAll('.tbtn');
   for(var i=0;i<tbs.length;i++)tbs[i].classList.toggle('active',tbs[i].dataset.t===selType);
@@ -414,44 +414,44 @@ function saveModal(){
   var o=getOvr();var parts=mKey.split('-');var y=parseInt(parts[0]),m=parseInt(parts[1]),d=parseInt(parts[2]);
   var base=cycleType(new Date(y,m-1,d));var note=document.getElementById('mNote').value.trim();
   if(selType===base&&!note)delete o[mKey];else o[mKey]={type:selType,note:note};
-  setOvr(o);closeModal();rebuildPages();showToast('Mentve!');
+  setOvr(o);closeModal();rebuildPages();showToast('✅ Mentve!');
 }
-function delModal(){var o=getOvr();delete o[mKey];setOvr(o);closeModal();rebuildPages();showToast('Torolve');}
+function delModal(){var o=getOvr();delete o[mKey];setOvr(o);closeModal();rebuildPages();showToast('🗑️ Törölve');}
 function closeModal(){document.getElementById('overlay').classList.remove('open');document.body.style.overflow='';}
 function oClick(e){if(e.target.id==='overlay')closeModal();}
 
 function buildTxt(y,m){
-  var t='Muszak - '+MNAMES[m]+' '+y+'
-
-';
-  var lmap={day:'Nappal',night:'Ejszaka',free:'Szabad',sub:'Helyet.E','sub-day':'Helyet.N'};
+  var t='Műszak – '+MNAMES[m]+' '+y+'\n\n';
+  var lmap={day:'☀️ Nappal',night:'🌙 Éjszaka',free:'✨ Szabad',sub:'🔄 H.É','sub-day':'🔄 H.N'};
   var days=new Date(y,m+1,0).getDate();
   for(var d=1;d<=days;d++){
     var dt=new Date(y,m,d);var s=getShift(dt);var hol=HOLIDAYS[dk(dt)]||'';
     t+=String(d).padStart(2,'0')+'. '+DSHORT[dt.getDay()]+'  '+lmap[s.type];
-    if(hol)t+=' '+hol;if(s.note)t+=' - '+s.note;t+='
-';
+    if(hol)t+=' 🎉'+hol;if(s.note)t+=' – '+s.note;t+='\n';
   }
-  return t+'
-MuszakApp';
+  return t+'\n📱 MűszakApp';
 }
-function doCopy(y,m){navigator.clipboard.writeText(buildTxt(y,m)).then(function(){showToast('Masolva!');}).catch(function(){showToast('Hiba');});}
+function doCopy(y,m){navigator.clipboard.writeText(buildTxt(y,m)).then(function(){showToast('📋 Másolva!');}).catch(function(){showToast('Hiba');});}
 function doWA(y,m){window.open('https://wa.me/?text='+encodeURIComponent(buildTxt(y,m)));}
-function doMail(y,m){window.location.href='mailto:?subject=Muszak+beoszt\u00E1s&body='+encodeURIComponent(buildTxt(y,m));}
+function doMail(y,m){window.location.href='mailto:?subject=Muszak&body='+encodeURIComponent(buildTxt(y,m));}
 
 function showToast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show');},2200);}
 
 (function(){
   try{
     var o=getOvr();
-    var defs={'2026-05-03':{type:'sub',note:'Attila helyett'},'2026-05-04':{type:'sub',note:'Attila helyett'}};
-    var ch=false;
-    for(var k in defs){if(!o[k]){o[k]=defs[k];ch=true;}}
-    if(ch)setOvr(o);
+    if(!o['2026-05-03'])o['2026-05-03']={type:'sub',note:'Attila helyett'};
+    if(!o['2026-05-04'])o['2026-05-04']={type:'sub',note:'Attila helyett'};
+    setOvr(o);
   }catch(e){}
 })();
 
-try{buildNav();buildAllPages();}catch(e){document.body.innerHTML+='<div style="color:red;padding:20px">Hiba: '+e.message+'</div>';}
+try{
+  buildNav();
+  buildAllPages();
+}catch(e){
+  document.getElementById('swipeTrack').innerHTML='<div style="color:#FF5E5E;padding:20px;font-size:13px">Hiba: '+e.message+'<br>'+e.stack+'</div>';
+}
 
 </script>
 </body>
