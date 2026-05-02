@@ -299,7 +299,7 @@ function pageHTML(y,m){
     var dow=dt.getDay();var isWE=(dow===0||dow===6);
     var holName=HOLIDAYS[key]||'';
     var cls='dc '+s.type+(isT?' today':'')+(holName?' holiday':'')+(isWE?' weekend':'');
-    h+='<div class="'+cls+'" onclick="openModal(''+key+'')">';
+    h+='<div class="'+cls+'" data-k="'+key+'" onclick="openModal(this.dataset.k)">';
     h+='<div class="dc-bar"></div>';
     if(holName) h+='<div class="hol-dot"></div>';
     if(isO) h+='<div class="ovrdt"></div>';
@@ -317,7 +317,7 @@ function pageHTML(y,m){
     for(var i=0;i<10;i++){
       var dt=new Date(now.getFullYear(),now.getMonth(),now.getDate()+i);
       var s=getShift(dt);var holN=HOLIDAYS[dk(dt)]||'';var isToday=(i===0);
-      h+='<div class="ucard'+(isToday?' today-card':'')+'" onclick="openModal(''+dk(dt)+'')">';
+      h+='<div class="ucard'+(isToday?' today-card':'')+'" data-k="'+dk(dt)+'" onclick="openModal(this.dataset.k)">';
       h+='<div class="ucard-ico '+s.type+'">'+ICONS[s.type]+'</div>';
       h+='<div class="ucard-body">';
       h+='<div class="ucard-date">'+(isToday?'🟢 MA: ':'')+DFULL[dt.getDay()]+', '+(dt.getMonth()+1)+'. '+dt.getDate()+'.</div>';
